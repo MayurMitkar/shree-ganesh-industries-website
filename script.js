@@ -65,3 +65,45 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(changeHeroImage, 5000);
 
 });
+let lastScrollTop = 0;
+
+const header = document.querySelector(".header");
+
+window.addEventListener("scroll", function () {
+    let currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScrollTop && currentScroll > 100) {
+        // Scrolling down: hide header
+        header.classList.add("hide-header");
+    } else {
+        // Scrolling up: show header
+        header.classList.remove("hide-header");
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
+
+
+// Hamburger Menu Toggle
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+if (menuToggle && navLinks) {
+
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+
+        const isOpen = navLinks.classList.contains("active");
+
+        menuToggle.setAttribute("aria-expanded", isOpen);
+    });
+
+    // Close menu after clicking a navigation link
+    navLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", function () {
+            navLinks.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
+        });
+    });
+
+}

@@ -17,30 +17,47 @@
 
 <body>
 
-    <!-- Navigation Bar -->
-    <header class="header">
-        <nav class="navbar">
+   
+<!-- Navigation Bar -->
+<header class="header">
+    <nav class="navbar">
 
-            <a href="#" class="logo">
-                <div class="logo-icon">SG</div>
+        <a href="#home" class="logo">
+            <div class="logo-icon">SG</div>
 
-                <div class="logo-text">
-                    <h2>SHREE GANESH</h2>
-                    <span>INDUSTRIES</span>
-                </div>
-            </a>
+            <div class="logo-text">
+                <h2>SHREE GANESH</h2>
+                <span>INDUSTRIES</span>
+            </div>
+        </a>
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#infrastructure">Infrastructure</a></li>
-            </ul>
+        <!-- Hamburger Menu Button -->
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Toggle navigation"
+                aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-         <a href="#contact" class="contact-btn">
-    Get In Touch
-    <span>→</span>
-</a>
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#infrastructure">Infrastructure</a></li>
+            <li class="mobile-contact">
+                <a href="#contact">Get In Touch →</a>
+            </li>
+        </ul>
+
+        <a href="#contact" class="contact-btn">
+            Get In Touch
+            <span>→</span>
+        </a>
+
+    </nav>
+</header>
 
         </nav>
     </header>
