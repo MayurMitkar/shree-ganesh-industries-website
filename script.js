@@ -85,6 +85,7 @@ window.addEventListener("scroll", function () {
 
 
 // Hamburger Menu Toggle
+
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
@@ -92,18 +93,17 @@ if (menuToggle && navLinks) {
 
     menuToggle.addEventListener("click", function () {
         navLinks.classList.toggle("active");
+        menuToggle.classList.toggle("active");
 
         const isOpen = navLinks.classList.contains("active");
-
         menuToggle.setAttribute("aria-expanded", isOpen);
     });
 
-    // Close menu after clicking a navigation link
     navLinks.querySelectorAll("a").forEach(link => {
         link.addEventListener("click", function () {
             navLinks.classList.remove("active");
+            menuToggle.classList.remove("active");
             menuToggle.setAttribute("aria-expanded", "false");
         });
     });
-
 }
